@@ -37,7 +37,7 @@ jobs:
         run: |
           terraform init \
             -backend-config="bucket=${{ vars.TERRAFORM_STATE_BUCKET }}" \
-            -backend-config="key=${{ vars.GITHUB_REPOSITORY }}" \
+            -backend-config="key=${{ github.repository }}" \
             -backend-config="region=${{ vars.AWS_REGION }}"
 
       - name: Terraform Validate
